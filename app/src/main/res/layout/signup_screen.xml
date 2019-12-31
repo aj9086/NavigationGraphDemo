@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".login_signup_module.SignupScreen">
+
+
+
+    <EditText
+        android:id="@+id/emailET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:hint="Email" />
+
+    <EditText
+        android:id="@+id/passET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/emailET"
+        android:layout_margin="10dp"
+        android:hint="Password" />
+
+    <EditText
+        android:id="@+id/passConfirmTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/passET"
+        android:layout_margin="10dp"
+        android:hint="Confirm Password" />
+
+    <Button
+        android:id="@+id/signupBT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/passConfirmTV"
+        android:layout_centerHorizontal="true"
+        android:text="signup" />
+
+</RelativeLayout>

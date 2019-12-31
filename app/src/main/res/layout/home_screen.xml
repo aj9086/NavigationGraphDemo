@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".home_module.HomeScreen">
+
+   <!-- <TextView
+        android:id="@+id/wlcm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Welcome\nTo\nHome"
+        android:textSize="20sp"
+        android:padding="5dp"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimary"
+        android:layout_centerInParent="true"
+        android:gravity="center"/>
+<TextView
+    android:id="@+id/nameTV"
+    android:layout_below="@id/wlcm"
+    android:gravity="center"
+    android:textSize="20sp"
+    android:text="hii"
+    android:padding="5dp"
+    android:textStyle="bold"
+    android:textColor="@android:color/black"
+    android:layout_centerHorizontal="true"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"/>-->
+
+    <fragment
+        android:id="@+id/nav_home_host"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        app:navGraph="@navigation/nav_graph"
+        app:defaultNavHost="true"/>
+
+
+
+</RelativeLayout>

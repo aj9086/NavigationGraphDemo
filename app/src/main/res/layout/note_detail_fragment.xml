@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:layout_margin="16dp">
+
+    <TextView
+        android:id="@+id/noteIdView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="id :"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/editNoteButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.45"
+        tools:text="Note id" />
+
+    <TextView
+        android:id="@+id/noteText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="text :"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@id/noteIdView"
+        app:layout_constraintStart_toStartOf="@id/noteIdView"
+        app:layout_constraintTop_toBottomOf="@id/noteIdView"
+        tools:text="Note text" />
+
+    <Button
+        android:id="@+id/editNoteButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="edit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/deleteNoteButton"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/deleteNoteButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="delete"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/editNoteButton" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashScreen"
+   >
+
+    <fragment
+        android:id="@+id/splashScreen"
+        android:name="aj.navigationcomponents.SplashScreen"
+        android:label="splash_screen"
+        tools:layout="@layout/splash_screen" >
+        <action
+            android:id="@+id/action_splashScreen_to_loginScreen"
+            app:destination="@id/auth_nav"
+            app:popUpTo="@id/splashScreen"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_splashScreen_to_homeScreen"
+            app:destination="@id/homeScreen"
+            app:popUpTo="@id/splashScreen"
+            app:popUpToInclusive="true"/>
+    </fragment>
+
+    <navigation
+        android:id="@+id/auth_nav"
+        app:startDestination="@id/loginScreen" >
+        <fragment
+            android:id="@+id/loginScreen"
+            android:name="aj.navigationcomponents.login_signup_module.LoginScreen"
+            android:label="Login"
+            tools:layout="@layout/login_screen">
+            <action
+                android:id="@+id/action_loginScreen_to_signupScreen"
+                app:destination="@id/signupScreen" />
+            <action
+                android:id="@+id/action_loginScreen_to_forgotPassScreen"
+                app:destination="@id/forgotPassScreen" />
+            <action
+                android:id="@+id/action_loginScreen_to_homeScreen"
+                app:destination="@id/homeScreen"
+                app:popUpTo="@id/loginScreen"
+                app:popUpToInclusive="true" />
+        </fragment>
+        <fragment
+            android:id="@+id/signupScreen"
+            android:name="aj.navigationcomponents.login_signup_module.SignupScreen"
+            android:label="Sign up"
+            tools:layout="@layout/signup_screen">
+            <action
+                android:id="@+id/action_signupScreen_to_createProfileScreen"
+                app:destination="@id/createProfileScreen" />
+        </fragment>
+        <fragment
+            android:id="@+id/createProfileScreen"
+            android:name="aj.navigationcomponents.login_signup_module.CreateProfileScreen"
+            android:label="Create Profile"
+            tools:layout="@layout/create_profile_screen">
+            <action
+                android:id="@+id/action_createProfileScreen_to_homeScreen"
+                app:destination="@id/homeScreen"
+                app:popUpTo="@id/loginScreen"
+                app:popUpToInclusive="true" />
+        </fragment>
+        <fragment
+            android:id="@+id/forgotPassScreen"
+            android:name="aj.navigationcomponents.login_signup_module.ForgotPassScreen"
+            android:label="Forgot Password"
+            tools:layout="@layout/forgot_pass_screen" />
+    </navigation>
+
+    <fragment
+        android:id="@+id/homeScreen"
+        android:name="aj.navigationcomponents.home_module.HomeScreen"
+        android:label="Home"
+        tools:layout="@layout/home_screen" >
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_homeScreen_to_loginScreen"
+            app:destination="@id/auth_nav"
+            app:popUpToInclusive="true"
+            app:popUpTo="@+id/nav_graph"/>
+        <action
+            android:id="@+id/action_homeScreen_to_profileScreen"
+            app:destination="@id/profileScreen"
+         />
+        <action
+            android:id="@+id/action_homeScreen_to_galleryNav"
+            app:destination="@id/galleryNav" />
+        <action
+            android:id="@+id/action_homeScreen_to_settingNav"
+            app:destination="@id/setting_nav" />
+        <action
+            android:id="@+id/action_homeScreen_to_addNoteFragment"
+            app:destination="@id/addNoteFragment" />
+        <action
+            android:id="@+id/action_homeScreen_to_noteDetailFragment"
+            app:destination="@id/noteDetailFragment" />
+
+
+    </fragment>
+    <fragment
+        android:id="@+id/profileScreen"
+        android:name="aj.navigationcomponents.home_module.ProfileScreen"
+        android:label="profile_screen"
+        tools:layout="@layout/profile_screen" />
+    <navigation
+        android:id="@+id/galleryNav"
+
+        app:startDestination="@id/galleryScreen2" >
+        <fragment
+            android:id="@+id/galleryScreen2"
+            android:name="aj.navigationcomponents.home_module.GalleryScreen"
+            android:label="gallery_screen"
+            tools:layout="@layout/gallery_screen">
+            <action
+                android:id="@+id/action_galleryScreen2_to_detailScreen"
+                app:destination="@id/detailScreen" />
+        </fragment>
+        <fragment
+            android:id="@+id/detailScreen"
+            android:name="aj.navigationcomponents.home_module.DetailScreen"
+            android:label="detail_screen"
+            tools:layout="@layout/detail_screen">
+
+            <argument
+                android:name="userName"
+                android:defaultValue="name" />
+            <deepLink app:uri="www.example.com/user/{userName}" />
+        </fragment>
+    </navigation>
+
+    <include app:graph="@navigation/setting_nav" />
+    <fragment
+        android:id="@+id/noteDetailFragment"
+        android:name="aj.navigationcomponents.home_module.notedetail.NoteDetailFragment"
+        android:label="NoteDetailFragment" >
+
+        <argument
+            android:name="noteId"
+            app:argType="integer" />
+
+        <action
+            android:id="@+id/action_noteDetailFragment_to_editNote"
+            app:destination="@id/editNoteFragment" />
+
+        <action
+            android:id="@+id/action_noteDetailFragment_to_deleteNote"
+            app:destination="@id/deleteNoteFragment" />
+
+        <deepLink
+            android:id="@+id/noteDetailDeepLink"
+            app:uri="notesapp://notes/{noteId}" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/addNoteFragment"
+        android:name="aj.navigationcomponents.home_module.addnote.AddNoteFragment"
+        android:label="AddNoteFragment" />
+    <fragment
+        android:id="@+id/editNoteFragment"
+        android:name="aj.navigationcomponents.home_module.editnote.EditNoteFragment"
+        android:label="EditNoteFragment" >
+        <argument
+            android:name="noteId"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/deleteNoteFragment"
+        android:name="aj.navigationcomponents.home_module.deletenote.DeleteNoteFragment"
+        android:label="DeleteNoteFragment" >
+        <argument
+            android:name="noteId"
+            app:argType="integer" />
+    </fragment>
+
+
+    <!--
+        <navigation
+            android:id="@+id/settingNav"
+            app:startDestination="@id/settingsScreen" >
+            <fragment
+                android:id="@+id/settingsScreen"
+                android:name="aj.navigationcomponents.home_module.SettingsScreen"
+                android:label="settings_screen"
+                tools:layout="@layout/settings_screen" />
+        </navigation>
+    -->
+
+</navigation>

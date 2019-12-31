@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".login_signup_module.LoginScreen">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Nav Component App"
+        android:textColor="#000"
+        android:textSize="20sp"
+        android:layout_marginTop="100dp"
+        app:layout_constraintBottom_toTopOf="@+id/nextBT"
+        app:layout_constraintEnd_toEndOf="@+id/nextBT"
+        app:layout_constraintHorizontal_bias="0.736"
+        app:layout_constraintStart_toStartOf="@+id/nextBT"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.197" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.388" />
+
+    <Button
+        android:id="@+id/nextBT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText"
+        app:layout_constraintVertical_bias="0.09" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginTop="44dp"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="numberPassword"
+        android:singleLine="true"
+        app:layout_constraintEnd_toEndOf="@+id/editText2"
+        app:layout_constraintStart_toStartOf="@+id/editText2"
+        app:layout_constraintTop_toBottomOf="@+id/editText2" />
+
+    <TextView
+        android:id="@+id/forgotTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="Forgot password?"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintHorizontal_bias="0.634"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/nextBT" />
+
+    <TextView
+        android:id="@+id/signupTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New user? Register here"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/forgotTV"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/forgotTV"
+        app:layout_constraintTop_toBottomOf="@+id/forgotTV"
+        app:layout_constraintVertical_bias="0.093" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".login_signup_module.CreateProfileScreen">
+
+
+    <Button
+        android:id="@+id/submitBT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="Submit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/addressTV"
+        app:layout_constraintStart_toStartOf="@+id/addressTV"
+        app:layout_constraintTop_toBottomOf="@+id/addressTV"
+        app:layout_constraintVertical_bias="0.13" />
+
+    <EditText
+        android:id="@+id/nameET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="125dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:ems="10"
+        android:hint="Name"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/dobET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:ems="10"
+        android:hint="DOB"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/nameET"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/nameET"
+        app:layout_constraintTop_toBottomOf="@+id/nameET" />
+
+    <EditText
+        android:id="@+id/mobET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:ems="10"
+        android:hint="Mob number"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/dobET"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/dobET"
+        app:layout_constraintTop_toBottomOf="@+id/dobET" />
+
+    <EditText
+        android:id="@+id/addressTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:ems="10"
+        android:hint="Address"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/mobET"
+        app:layout_constraintStart_toStartOf="@+id/mobET"
+        app:layout_constraintTop_toBottomOf="@+id/mobET" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
